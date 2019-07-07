@@ -3,4 +3,5 @@
 *.iml
 
 # build dirs
-out
+out/
+target/
