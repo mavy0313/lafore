@@ -22,6 +22,7 @@ public class LinkList {
     first = first.next;
     return temp;
   }
+
   public void displayList() {
     System.out.print("List (first-->last): ");
     Link current = first;       // От начала списка
@@ -30,5 +31,39 @@ public class LinkList {
       current = current.next;  // Переход к следующему элементу
     }
     System.out.println("");
+  }
+
+  public Link find(int key) {
+    Link current = first;
+
+    while (current.iData != key) {
+      if (current.next == null) {
+        return null;
+      } else {
+        current = current.next;
+      }
+    }
+    return current;
+  }
+
+  public Link delete(int key) {
+    Link current = first;
+    Link previous = first;
+
+    while (current.iData != key) {
+      if (current.next == null) {
+        return null;
+      } else {
+        previous = current;
+        current = current.next;
+      }
+    }
+
+    if (current == first) {
+      first = first.next;
+    } else {
+      previous.next = current.next;
+    }
+    return current;
   }
 }
