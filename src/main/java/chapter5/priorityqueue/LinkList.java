@@ -16,4 +16,10 @@ public class LinkList {
     Link newLink = new Link(item);
     first = newLink;
   }
+
+  public Long remove() {
+    Long temp = first.data;
+    first = null;
+    return temp;
+  }
 }
