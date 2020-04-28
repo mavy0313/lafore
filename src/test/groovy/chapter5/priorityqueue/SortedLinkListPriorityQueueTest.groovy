@@ -2,9 +2,9 @@ package chapter5.priorityqueue
 
 import spock.lang.Specification
 
-class LinkListPriorityQueueTest extends Specification {
+class SortedLinkListPriorityQueueTest extends Specification {
 
-  def "should create empty LinkListPriorityQueue"() {
+  def "should create empty SortedLinkListPriorityQueue"() {
     given:
     def priorityQueue = new LinkListPriorityQueue();
 
