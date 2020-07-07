@@ -1,4 +1,4 @@
-package chapter11;
+package chapter11.openaddressing;
 
 class DataItem {
   private int iData; // Данные (ключ)

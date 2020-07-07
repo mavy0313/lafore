@@ -1,4 +1,4 @@
-package chapter11;
+package chapter11.openaddressing;
 
 class HashTable {
   private DataItem[] hashArray; // Массив ячеек хеш-таблицы
