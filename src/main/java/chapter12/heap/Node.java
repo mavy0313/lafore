@@ -1,4 +1,4 @@
-package chapter12;
+package chapter12.heap;
 
 class Node {
   private int iData; // Данные (ключ)
