@@ -1,4 +1,4 @@
-package chapter13;
+package chapter13.dfs;
 
 class Graph {
   private final int MAX_VERTS = 20;

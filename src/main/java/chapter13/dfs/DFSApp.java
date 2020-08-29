@@ -1,4 +1,4 @@
-package chapter13;
+package chapter13.dfs;
 
 class DFSApp {
   public static void main(String[] args)

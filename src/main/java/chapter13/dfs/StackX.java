@@ -1,4 +1,4 @@
-package chapter13;
+package chapter13.dfs;
 
 class StackX {
   private final int SIZE = 20;

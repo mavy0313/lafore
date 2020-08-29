@@ -1,4 +1,4 @@
-package chapter13;
+package chapter13.bfs;
 
 class Vertex {
   public char label; // метка (например, 'A')
