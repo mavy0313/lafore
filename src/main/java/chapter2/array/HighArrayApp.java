@@ -16,6 +16,9 @@ public class HighArrayApp {
     arr.insert(66);
     arr.insert(33);
     arr.display(); // Вывод элементов
+
+    System.out.println("Max:" + arr.getMax());
+
     int searchKey = 35; // Поиск элемента
     if( arr.find(searchKey) )
       System.out.println("Found " + searchKey);
@@ -25,5 +28,8 @@ public class HighArrayApp {
     arr.delete(55);
     arr.delete(99);
     arr.display(); // Повторный вывод
+
+    HighArray highArray2 = new HighArray(5);
+    System.out.println(highArray2.getMax());
   }
 }
