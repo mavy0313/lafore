@@ -65,4 +65,24 @@ public void display() // Вывод содержимого массива
     }
     return max;
   }
+
+  public long removeMax() {
+    int i;
+    int maxIndex = 0;
+    if (nElems == 0) {
+      return -1;
+    }
+    long max = a[0];
+    for (i = 1; i < nElems; i++) {
+      if (a[i] > max) {
+        max = a[i];
+        maxIndex = i;
+      }
+    }
+//    delete(max);
+    for (int k = maxIndex; k < nElems - 1; k++) // Сдвиг последующих элементов
+      a[k] = a[k+1];
+    nElems--; // Уменьшение размера
+    return max;
+  }
 }

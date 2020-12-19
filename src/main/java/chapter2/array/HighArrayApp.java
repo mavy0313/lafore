@@ -31,5 +31,29 @@ public class HighArrayApp {
 
     HighArray highArray2 = new HighArray(5);
     System.out.println(highArray2.getMax());
+    highArray2.insert(1);
+    highArray2.insert(2);
+    highArray2.insert(3);
+    System.out.println(highArray2.getMax());
+
+    int size = 6;
+    HighArray array3 = new HighArray(size);
+    array3.insert(3);
+    array3.insert(2);
+    array3.insert(1);
+    array3.insert(25);
+    array3.insert(40);
+    array3.insert(15);
+    long[] sorted = new long[size];
+
+    for (int i = size - 1; i >= 0; i--) {
+      sorted[i] = array3.removeMax();
+    }
+
+    System.out.println("Sorted:");
+    for (int i = 0; i < size; i++) {
+      System.out.print(sorted[i] + " "); // Вывод
+    }
+      System.out.println("");
   }
 }
