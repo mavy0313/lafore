@@ -63,4 +63,8 @@ public class OrdArray {
       System.out.print(a[j] + " "); // Вывод текущего элемента
     System.out.println();
   }
+
+  public long[] merge(long[] array, long[] array2) {
+    return new long[]{1,2,3};
+  }
 }
