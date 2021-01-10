@@ -64,7 +64,34 @@ public class OrdArray {
     System.out.println();
   }
 
-  public long[] merge(long[] array, long[] array2) {
-    return new long[]{1,2,3};
+  public long[] merge(long[] array1, long[] array2) {
+    long[] result = new long[array1.length + array2.length];
+
+    int i = 0;
+    int j = 0;
+
+    for (int k = 0; k < result.length; k++) {
+      if (i == array1.length) {
+        //append 2 to 1
+        result[k] = array2[j];
+        j++;
+        continue;
+      }
+      if (j == array2.length) {
+        //append 1 to 2
+        result[k] = array1[i];
+        i++;
+        continue;
+      }
+      if (array1[i] < array2[j]) {
+        result[k] = array1[i];
+        i++;
+      } else {
+        result[k] = array2[j];
+        j++;
+      }
+    }
+
+    return result;
   }
 }
