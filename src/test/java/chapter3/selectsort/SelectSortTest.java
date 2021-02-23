@@ -1,6 +1,6 @@
 package chapter3.selectsort;
 
-import chapter3.bubblesort.BubbleSort;
+import chapter3.bubblesort.SelectSort;
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;

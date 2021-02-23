@@ -1,5 +1,7 @@
 package chapter3.insertsort;
 
+import chapter3.selectsort.SelectSort;
+
 public class InsertSort {
   private int nElems;
   private int maxSize;
@@ -33,5 +35,45 @@ public class InsertSort {
 
   public void insert(int i) {
     array[nElems++] = i;
+  }
+
+  public void display() // Вывод содержимого массива
+  {
+    for(int j=0; j<nElems; j++) // Для каждого элемента
+      System.out.print(array[j] + " "); // Вывод
+    System.out.println("");
+  }
+
+  public static void main(String[] args) {
+    //10_000 - 102 ms
+    //100_000 - 17000ms
+    //180_000 - 57917ms
+    //130_000 - 29306ms bubble sort
+
+    //130_000 - 31771ms select sort
+    //130_000 - 1664ms insert sort
+
+    int maxSize = 130_000;
+    InsertSort insertSort = new InsertSort(maxSize);
+
+    for(int j=0; j<maxSize; j++) // Заполнение массива
+    { // случайными числами
+      int n = (int)( java.lang.Math.random()*(maxSize-1) );
+      insertSort.insert(n);
+    }
+
+    System.out.println("Before sorting");
+    insertSort.display();
+
+    long startTime = System.currentTimeMillis();
+
+    insertSort.sort();
+
+    long endTime = System.currentTimeMillis();
+
+    long totalTime = endTime - startTime;
+    System.out.println("After sorting");
+    insertSort.display();
+    System.out.println("Sort total time ms=" + totalTime);
   }
 }

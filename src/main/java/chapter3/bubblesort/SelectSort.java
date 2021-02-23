@@ -1,4 +1,4 @@
-package chapter3.selectsort;
+package chapter3.bubblesort;
 
 public class SelectSort {
 
@@ -13,14 +13,20 @@ public class SelectSort {
   }
 
   public int[] sort() {
-    int out, in, min;
-    for (out = 0; out < nElems - 1; out++) {
-      min = out;
-      for (in = out + 1; in < nElems; in++) {
-        if (array[in] < array[min]) {
-          min = in;
+//    for (int i = 0; i < array.length - 1; i++) {
+//      for (int j = i + 1; j < array.length; j++) {
+//        if (array[i] > array[j]) {
+//          swap(i, j);
+//        }
+//      }
+//    }
+
+//    for (int out = nElems - 1; out > 1; out--) { Error in book out > 1
+    for (int out = nElems - 1; out > 0; out--) {
+      for (int in = 0; in < out; in++) {
+        if (array[in] > array[in + 1]) {
+          swap(in, in + 1);
         }
-        swap(out, min);
       }
     }
     return array;
@@ -48,29 +54,27 @@ public class SelectSort {
     //100_000 - 17000ms
     //180_000 - 57917ms
     //130_000 - 29306ms
-
-    //130_000 - 31771
     int maxSize = 130_000;
-    SelectSort selectSort = new SelectSort(maxSize);
+    SelectSort bubbleSort = new SelectSort(maxSize);
 
     for(int j=0; j<maxSize; j++) // Заполнение массива
     { // случайными числами
       int n = (int)( java.lang.Math.random()*(maxSize-1) );
-      selectSort.insert(n);
+      bubbleSort.insert(n);
     }
 
     System.out.println("Before sorting");
-    selectSort.display();
+    bubbleSort.display();
 
     long startTime = System.currentTimeMillis();
 
-    selectSort.sort();
+    bubbleSort.sort();
 
     long endTime = System.currentTimeMillis();
 
     long totalTime = endTime - startTime;
     System.out.println("After sorting");
-    selectSort.display();
+    bubbleSort.display();
     System.out.println("Sort total time ms=" + totalTime);
   }
 }
