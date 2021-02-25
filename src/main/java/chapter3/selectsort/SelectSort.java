@@ -44,6 +44,35 @@ public class SelectSort {
   }
 
   public static void main(String[] args) {
+    sortRandomElements();
+    sortDescOrderedElements();
+  }
+
+  private static void sortDescOrderedElements() {
+    int maxSize = 130_000; //Sort total time ms=6427
+    SelectSort selectSort = new SelectSort(maxSize);
+
+    for (int j = maxSize - 1; j >= 0; j--) // Заполнение массива
+    {
+      selectSort.insert(j);
+    }
+
+    System.out.println("Before sorting");
+    selectSort.display();
+
+    long startTime = System.currentTimeMillis();
+
+    selectSort.sort();
+
+    long endTime = System.currentTimeMillis();
+
+    long totalTime = endTime - startTime;
+    System.out.println("After sorting");
+    selectSort.display();
+    System.out.println("Sort total time ms=" + totalTime);
+  }
+
+  private static void sortRandomElements() {
     //10_000 - 102 ms
     //100_000 - 17000ms
     //180_000 - 57917ms
@@ -55,7 +84,7 @@ public class SelectSort {
 
     for(int j=0; j<maxSize; j++) // Заполнение массива
     { // случайными числами
-      int n = (int)( java.lang.Math.random()*(maxSize-1) );
+      int n = (int)( Math.random()*(maxSize-1) );
       selectSort.insert(n);
     }
 

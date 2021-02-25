@@ -1,12 +1,12 @@
 package chapter3.bubblesort;
 
-public class SelectSort {
+public class BubbleSort {
 
   private int nElems;
   private int maxSize;
   private int[] array;
 
-  public SelectSort(int maxSize) {
+  public BubbleSort(int maxSize) {
     this.maxSize = maxSize;
     this.array = new int[maxSize];
     this.nElems = 0;
@@ -50,16 +50,45 @@ public class SelectSort {
   }
 
   public static void main(String[] args) {
+    sortRandomElements();
+    sortDescOrderedElements();
+  }
+
+  private static void sortDescOrderedElements() {
+    int maxSize = 130_000; //Sort total time ms=5908
+    BubbleSort bubbleSort = new BubbleSort(maxSize);
+
+    for (int j = maxSize - 1; j >= 0; j--) // Заполнение массива
+    {
+      bubbleSort.insert(j);
+    }
+
+    System.out.println("Before sorting");
+    bubbleSort.display();
+
+    long startTime = System.currentTimeMillis();
+
+    bubbleSort.sort();
+
+    long endTime = System.currentTimeMillis();
+
+    long totalTime = endTime - startTime;
+    System.out.println("After sorting");
+    bubbleSort.display();
+    System.out.println("Sort total time ms=" + totalTime);
+  }
+
+  private static void sortRandomElements() {
     //10_000 - 102 ms
     //100_000 - 17000ms
     //180_000 - 57917ms
     //130_000 - 29306ms
     int maxSize = 130_000;
-    SelectSort bubbleSort = new SelectSort(maxSize);
+    BubbleSort bubbleSort = new BubbleSort(maxSize);
 
     for(int j=0; j<maxSize; j++) // Заполнение массива
     { // случайными числами
-      int n = (int)( java.lang.Math.random()*(maxSize-1) );
+      int n = (int)( Math.random()*(maxSize-1) );
       bubbleSort.insert(n);
     }
 

@@ -45,6 +45,35 @@ public class InsertSort {
   }
 
   public static void main(String[] args) {
+    sortRandomElements();
+    sortDescOrderedElements();
+  }
+
+  private static void sortDescOrderedElements() {
+    int maxSize = 130_000; //Sort total time ms=2863
+    InsertSort insertSort = new InsertSort(maxSize);
+
+    for (int j = maxSize - 1; j >= 0; j--) // Заполнение массива
+    {
+      insertSort.insert(j);
+    }
+
+    System.out.println("Before sorting");
+    insertSort.display();
+
+    long startTime = System.currentTimeMillis();
+
+    insertSort.sort();
+
+    long endTime = System.currentTimeMillis();
+
+    long totalTime = endTime - startTime;
+    System.out.println("After sorting");
+    insertSort.display();
+    System.out.println("Sort total time ms=" + totalTime);
+  }
+
+  private static void sortRandomElements() {
     //10_000 - 102 ms
     //100_000 - 17000ms
     //180_000 - 57917ms
@@ -58,7 +87,7 @@ public class InsertSort {
 
     for(int j=0; j<maxSize; j++) // Заполнение массива
     { // случайными числами
-      int n = (int)( java.lang.Math.random()*(maxSize-1) );
+      int n = (int)( Math.random()*(maxSize-1) );
       insertSort.insert(n);
     }
 

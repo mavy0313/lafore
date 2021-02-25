@@ -9,7 +9,7 @@ public class BubbleSortTest {
   @Test
   public void shouldReturnSortedArray() {
     //given
-    SelectSort bubbleSort = new SelectSort(4);
+    BubbleSort bubbleSort = new BubbleSort(4);
     bubbleSort.insert(4);
     bubbleSort.insert(3);
     bubbleSort.insert(2);
