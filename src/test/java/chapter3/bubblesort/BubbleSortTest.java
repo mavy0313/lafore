@@ -21,4 +21,20 @@ public class BubbleSortTest {
     //then
     assertArrayEquals(new int[]{1,2,3,4}, result);
   }
+
+  @Test
+  public void shouldReturnSortedArrayForBiDirect() {
+    //given
+    BubbleSort bubbleSort = new BubbleSort(4);
+    bubbleSort.insert(4);
+    bubbleSort.insert(3);
+    bubbleSort.insert(2);
+    bubbleSort.insert(1);
+
+    //when
+    int[] result = bubbleSort.sortBiDirect();
+
+    //then
+    assertArrayEquals(new int[]{1,2,3,4}, result);
+  }
 }

@@ -32,6 +32,22 @@ public class BubbleSort {
     return array;
   }
 
+  public int[] sortBiDirect() {
+    for (int out = nElems - 1, outDirect = 0; out > 0 && out != outDirect; out--, outDirect++) {
+      for (int in = 0; in < out; in++) {
+        if (array[in] > array[in + 1]) {
+          swap(in, in + 1);
+        }
+      }
+      for (int in = out - 1; in > outDirect && out != outDirect; in--) {
+        if (array[in] < array[in - 1]) {
+          swap(in, in - 1);
+        }
+      }
+    }
+    return array;
+  }
+
   private void swap(int i, int j) {
     int temp = array[i];
     array[i] = array[j];
