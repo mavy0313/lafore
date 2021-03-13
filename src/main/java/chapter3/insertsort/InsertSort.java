@@ -105,4 +105,9 @@ public class InsertSort {
     insertSort.display();
     System.out.println("Sort total time ms=" + totalTime);
   }
+
+  public int median() {
+    sort();
+    return array[array.length / 2];
+  }
 }
