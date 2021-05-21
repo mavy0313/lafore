@@ -30,8 +30,8 @@ class ArrayPar {
 
   public int partitionIt(int left, int right, long pivot)
   {
-    int leftPtr = left - 1;           // Справа от первого элемента
-    int rightPtr = right + 1;         // Слева от опорного элемента
+    int leftPtr = left - 1;           // Слева от первого элемента
+    int rightPtr = right + 1;         // Справа от опорного элемента
     while(true)
     {
       while(leftPtr < right &&       // Поиск большего элемента

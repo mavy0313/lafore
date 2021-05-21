@@ -1,7 +1,5 @@
 package chapter3.insertsort;
 
-import chapter3.selectsort.SelectSort;
-
 public class InsertSort {
   private int nElems;
   private int maxSize;
@@ -11,6 +9,14 @@ public class InsertSort {
     this.maxSize = maxSize;
     this.array = new int[maxSize];
     this.nElems = 0;
+  }
+
+  public int[] getArray() {
+    int[] result = new int[nElems];
+    for (int i = 0; i < nElems; i++) {
+      result[i] = array[i];
+    }
+    return result;
   }
 
   public int[] sort() {
@@ -109,5 +115,18 @@ public class InsertSort {
   public int median() {
     sort();
     return array[array.length / 2];
+  }
+
+  public void noDups() {
+    int toDeleteCount = 0;
+    for (int i = 0, j = 1; j < nElems; j++) {
+      if (array[i] == array[j]) {
+        toDeleteCount++;
+      } else {
+        i++;
+        array[i] = array[j];
+      }
+    }
+    nElems -= toDeleteCount;
   }
 }
