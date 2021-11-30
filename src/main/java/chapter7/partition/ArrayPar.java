@@ -30,23 +30,42 @@ class ArrayPar {
 
   public int partitionIt(int left, int right, long pivot)
   {
-    int leftPtr = left - 1;           // Слева от первого элемента
-    int rightPtr = right + 1;         // Справа от опорного элемента
-    while(true)
-    {
-      while(leftPtr < right &&       // Поиск большего элемента
-          theArray[++leftPtr] < pivot)
-        ;  // (пустое тело цикла)
+//    int leftPtr = left - 1;           // Слева от первого элемента
+//    int rightPtr = right + 1;         // Справа от опорного элемента
+//    while(true)
+//    {
+//      while(leftPtr < right &&       // Поиск большего элемента
+//          theArray[++leftPtr] < pivot)
+//        ;  // (пустое тело цикла)
+//
+//      while(rightPtr > left &&       // Поиск меньшего элемента
+//          theArray[--rightPtr] > pivot)
+//        ;  // (пустое тело цикла)
+//      if(leftPtr >= rightPtr)        // Если указатели сошлись,
+//        break;                      // разбиение закончено
+//      else                           // В противном случае
+//        swap(leftPtr, rightPtr);    // поменять элементы местами
+//    }
+//    return leftPtr;                   // Позиция разбиения
+    int leftPtr = left - 1;
+    int rightPtr = right + 1;
+    while (true) {
+      while(leftPtr < right && theArray[++leftPtr] < pivot) {
+        //nop
+      }
 
-      while(rightPtr > left &&       // Поиск меньшего элемента
-          theArray[--rightPtr] > pivot)
-        ;  // (пустое тело цикла)
-      if(leftPtr >= rightPtr)        // Если указатели сошлись,
-        break;                      // разбиение закончено
-      else                           // В противном случае
-        swap(leftPtr, rightPtr);    // поменять элементы местами
+      while(rightPtr > left && theArray[--rightPtr] > pivot) {
+        //nop
+      }
+
+      if (leftPtr >= rightPtr) {
+        break;
+      } else {
+        swap(leftPtr, rightPtr);
+      }
     }
-    return leftPtr;                   // Позиция разбиения
+    return leftPtr;
+
   }
   //--------------------------------------------------------------
   public void swap(int dex1, int dex2)  // Перестановка двух элементов

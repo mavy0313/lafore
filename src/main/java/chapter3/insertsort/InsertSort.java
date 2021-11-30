@@ -20,16 +20,29 @@ public class InsertSort {
   }
 
   public int[] sort() {
+//    int out, in;
+//    for (out = 1; out < nElems; out++) {
+//      int temp = array[out];
+//      in = out;
+//      while (in > 0 && array[in - 1] >= temp) {
+//        array[in] = array[in -1];
+//        --in;
+//      }
+//      array[in] = temp;
+//    }
+
     int out, in;
+
     for (out = 1; out < nElems; out++) {
       int temp = array[out];
       in = out;
       while (in > 0 && array[in - 1] >= temp) {
-        array[in] = array[in -1];
-        --in;
+        array[in] = array[in - 1];
+        in--;
       }
       array[in] = temp;
     }
+
     return array;
   }
 

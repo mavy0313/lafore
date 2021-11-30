@@ -13,6 +13,17 @@ public class SelectSort {
   }
 
   public int[] sort() {
+//    int out, in, min;
+//    for (out = 0; out < nElems - 1; out++) {
+//      min = out;
+//      for (in = out + 1; in < nElems; in++) {
+//        if (array[in] < array[min]) {
+//          min = in;
+//        }
+//        swap(out, min);
+//      }
+//    }
+
     int out, in, min;
     for (out = 0; out < nElems - 1; out++) {
       min = out;
@@ -20,8 +31,8 @@ public class SelectSort {
         if (array[in] < array[min]) {
           min = in;
         }
-        swap(out, min);
       }
+      swap(min, out);
     }
     return array;
   }

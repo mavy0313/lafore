@@ -22,10 +22,20 @@ public class BubbleSort {
 //    }
 
 //    for (int out = nElems - 1; out > 1; out--) { Error in book out > 1
+//    for (int out = nElems - 1; out > 0; out--) {
+//      for (int in = 0; in < out; in++) {
+//        if (array[in] > array[in + 1]) {
+//          swap(in, in + 1);
+//        }
+//      }
+//    }
+
     for (int out = nElems - 1; out > 0; out--) {
       for (int in = 0; in < out; in++) {
         if (array[in] > array[in + 1]) {
-          swap(in, in + 1);
+          int temp = array[in];
+          array[in] = array[in + 1];
+          array[in + 1] = temp;
         }
       }
     }
